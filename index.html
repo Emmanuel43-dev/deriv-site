@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dollar Printer</title>
   <style>
-    body {
+    body<script>
+  function connectDeriv() {
+    const app_id = 12345; // Replace with your real Deriv App ID
+    const redirect_uri = window.location.href;
+    const login_url = `https://oauth.deriv.com/oauth2/authorize?app_id=app_id   redirect_uri={redirect_uri}`;
+    window.location.href = login_url;
+  }
+</script> {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #111;
