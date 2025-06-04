@@ -55,8 +55,8 @@
       width: 100%;
       bottom: 0;
     }
-  </style>
-</head><body>
+  </style></head>
+<body>
   <header>
     <h1>Dollar Printer</h1>
     <p class="subtitle">Simple & Fast Copy Trading Tool for Deriv</p>
@@ -78,15 +78,13 @@
   </footer>
 
   <script>
-  const appId = 80342;
+    const appId = 80342;
 
-  document.getElementById('connectBtn').addEventListener('click', () => 
-    const redirectUri = window.location.href;
-    const oauthUrl = `https://oauth.deriv.com/oauth2/authorize?app_id={appId}&l=EN&brand=deriv&redirect_uri=${encodeURIComponent(redirectUri)}`;
-    window.location.href = oauthUrl;
-  });
-
-  // You can add code here later to handle the API token after redirect, if needed.
+    document.getElementById('connectBtn').addEventListener('click', () => {
+      const redirectUri = window.location.href;
+      const oauthUrl = `https://oauth.deriv.com/oauth2/authorize?app_id=appId   l=EN   brand=deriv   redirect_uri={encodeURIComponent(redirectUri)}`;
+      window.location.href = oauthUrl;
+    });
   </script>
 </body>
 </html>
