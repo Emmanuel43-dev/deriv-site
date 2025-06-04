@@ -54,7 +54,31 @@
     <p>© 2025 Dollar Printer. All rights reserved.</p>
   </footer>
 
-  <script>
+  <script><script>
+  const savedToken = localStorage.getItem("deriv_token");
+
+  if (savedToken) {
+    const ws = new WebSocket("wss://ws.deriv.com/websockets/v3");
+
+    ws.onopen = () => {
+      ws.send(JSON.stringify({
+        authorize: savedToken
+      }));
+
+      ws.send(JSON.stringify({
+        balance: 1,
+        subscribe: 1
+      }));
+    };
+
+    ws.onmessage = (msg) => {
+      const data = JSON.parse(msg.data);
+      if (data.msg_type === "balance") {
+        alert(`Balance: data.balance.currency{data.balance.balance / 100}`);
+      }
+    };
+  }
+  </script>
     const appId = 80342;
     function connectToDeriv() {
       const redirectUri = window.location.href;
