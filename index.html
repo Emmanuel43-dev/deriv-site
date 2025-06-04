@@ -6,7 +6,11 @@
   <title>Dollar Printer</title>
   <style>
     body<script>
-  function connectDeriv() {
+  function connectDeriv()window.onload = function () {
+  const url = new URL(window.location.href);
+  const token = url.searchParams.get("token1");
+  if (token) {
+    alert("Logged in with token: " + token); {
     const app_id = 12345; // Replace with your real Deriv App ID
     const redirect_uri = window.location.href;
     const login_url = `https://oauth.deriv.com/oauth2/authorize?app_id=app_id   redirect_uri={redirect_uri}`;
