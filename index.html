@@ -78,15 +78,15 @@
   </footer>
 
   <script>
-    const appId = 80342;
+  const appId = 80342;
 
-    document.getElementById('connectBtn').addEventListener('click', () => {
-      const redirectUri = window.location.href;
-      const oauthUrl = `https://oauth.deriv.com/oauth2/authorize?app_id=appId   l=EN   brand=deriv   redirect_uri={encodeURIComponent(redirectUri)}`;
-      window.location.href = oauthUrl;
-    });
+  document.getElementById('connectBtn').addEventListener('click', () => 
+    const redirectUri = window.location.href;
+    const oauthUrl = `https://oauth.deriv.com/oauth2/authorize?app_id={appId}&l=EN&brand=deriv&redirect_uri=${encodeURIComponent(redirectUri)}`;
+    window.location.href = oauthUrl;
+  });
 
-    // You can add code here later to handle the API token after redirect, if needed.
+  // You can add code here later to handle the API token after redirect, if needed.
   </script>
 </body>
 </html>
